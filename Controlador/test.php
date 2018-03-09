@@ -1,7 +1,7 @@
 <?php
-require_once("../BackEnd/conexionBD.php");
-$conexion = new conection();
-$datos = $conexion -> sqlConection(); 
+require_once("../Modelo/modelo_ListaClientes.php");
+$conexion = new modelo_ListaClientes();
+$datos = $conexion -> get_ClientsList(); 
 echo $datos;
 
 ?>
