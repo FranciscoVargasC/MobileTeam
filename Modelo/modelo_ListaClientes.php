@@ -18,9 +18,9 @@ class modelo_ListaClientes{
     {   
         try{          
         $params = array(array(1, SQLSRV_PARAM_IN),array(1, SQLSRV_PARAM_IN));
-        $tsql_callSP = "{call SEL_SeleccionarClientesExistentes(1,1)}";
+        $tsql_callSP = "{call SEL_SeleccionarClientesExistentes(?,?)}";
         
-        $stmr = sqlsrv_query($conn, $tsql_callSP);  
+        $stmr = sqlsrv_query($conn, $tsql_callSP, $params);  
             while($reg = sqlsrv_fetch_array($stmr))
                 {            
                     $this->listaClientes[] = $reg;
