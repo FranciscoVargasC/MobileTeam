@@ -21,13 +21,15 @@
                     $base_mejor_telefono = array();
                     $an = array();
                     $caracteristicas = array();
-                    $comentarios = array();                    
+                    $comentarios = array();
+
+                    
                     
                     echo "<div>";
                         echo "<div>";
                             echo "<table id='tblClientes'>";//tabla
                                 echo "<thead>";//cabecera
-                                    echo "<tr style='background:#f60Abf;'>";//tr head
+                                    echo "<tr style='background:#6e0f1b;'>";//tr head
                                         echo "<td>NÚMERO DEL CLIENTE</td>".
                                              "<td>NOMBRE DEL CLIENTE</td>".
                                              "<td>PASSWORD</td>".
@@ -87,8 +89,8 @@
                                                      "<td>".$base_mejor_telefono[$i]."</td>".
                                                      "<td>".$an[$i]."</td>".
                                                      "<td>".$caracteristicas[$i]."</td>".
-                                                     "<td>".$comentarios[$i]."</td>";
-                                                    // "<td><button class='btn btn-primary' onClick=\"selecciona(".$cli.",".$pas.")\" id=".$i."><span class='glyphicon glyphicon-hand-left'></span></button></td>";
+                                                     "<td>".$comentarios[$i]."</td>".
+                                                     "<td><button class='btn btn-primary' onclick=\"selecciona(".$i.")\" id=".$i."><span class='glyphicon glyphicon-hand-left'>Sel</span></button></td>";
                                             echo "</tr>"; //tr dinamico                                                                                   
                                         }
                                 echo "</tbody>";//cuerpo                                  

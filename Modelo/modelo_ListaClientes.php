@@ -16,7 +16,7 @@ class modelo_ListaClientes{
             $conIns = new conection();
             $conn = $conIns -> sqlConection();     
            
-            $rol = 1;  
+            $rol = 2;  
             $equipo = 1;                    
             $params = array(array($rol,SQLSRV_PARAM_IN), array($equipo, SQLSRV_PARAM_IN));      
 
