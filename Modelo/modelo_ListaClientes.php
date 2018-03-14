@@ -1,11 +1,8 @@
 <?php
 require_once("../Conection/conectionBD.php");
 
-
-class modelo_ListaClientes{
-    
-    private $listaClientes;  
-
+class modelo_ListaClientes{    
+    private $listaClientes;
     public function construct()
         {         
             $this->$listaClientes = array(); 
@@ -13,8 +10,6 @@ class modelo_ListaClientes{
             $this->$mensajeError = "";
         }
     
-  
-
     public function get_ClientsList()
     {         
         try{  
@@ -55,7 +50,5 @@ class modelo_ListaClientes{
             return "Se ha producido un error indefinido, favor de contactar con el administrador";
         }        
     }//get_ClientsList
-
-    
 }//class
 ?>

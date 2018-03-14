@@ -21,15 +21,13 @@
                     $base_mejor_telefono = array();
                     $an = array();
                     $caracteristicas = array();
-                    $comentarios = array();
-
+                    $comentarios = array();                    
                     
-                    
-                    echo "<div class='container'>";
-                        echo "<div style='overflow-x:auto;'>";
-                            echo "<table id='tblClientes' class='table table-striped'>";//tabla
-                                echo "<thead class='thead-inverse'  style='color:white;'>";//cabecera
-                                    echo "<tr style='background:#6e0f1b;'>";//tr head
+                    echo "<div>";
+                        echo "<div>";
+                            echo "<table id='tblClientes'>";//tabla
+                                echo "<thead>";//cabecera
+                                    echo "<tr style='background:#f60Abf;'>";//tr head
                                         echo "<td>NÚMERO DEL CLIENTE</td>".
                                              "<td>NOMBRE DEL CLIENTE</td>".
                                              "<td>PASSWORD</td>".
