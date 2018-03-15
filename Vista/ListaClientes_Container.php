@@ -27,9 +27,9 @@
                     
                     echo "<div>";
                         echo "<div>";
-                            echo "<table id='tblClientes'>";//tabla
+                            echo "<table id='tblClientes' onload=\"evalRol()\" >";//tabla
                                 echo "<thead>";//cabecera
-                                    echo "<tr style='background:#6e0f1b;'>";//tr head
+                                    echo "<tr style='background:#5FABC0;'>";//tr head
                                         echo "<td>NÚMERO DEL CLIENTE</td>".
                                              "<td>NOMBRE DEL CLIENTE</td>".
                                              "<td>PASSWORD</td>".
@@ -90,7 +90,7 @@
                                                      "<td>".$an[$i]."</td>".
                                                      "<td>".$caracteristicas[$i]."</td>".
                                                      "<td>".$comentarios[$i]."</td>".
-                                                     "<td><button class='btn btn-primary' onclick=\"selecciona(".$i.")\" id=".$i."><span class='glyphicon glyphicon-hand-left'>Sel</span></button></td>";
+                                                     "<td><button onclick=\"eliminarCliente(".$i.")\" id=\"btnEliminar".$i."\" style=\"visibility:hidden\">Eliminar</button></td>";
                                             echo "</tr>"; //tr dinamico                                                                                   
                                         }
                                 echo "</tbody>";//cuerpo                                  
