@@ -44,7 +44,8 @@
                                              "<td>BADE MEJOR TELÉFONO</td>".
                                              "<td>A & N</td>".
                                              "<td>CARACTERISTICAS</td>".
-                                             "<td>COMENTARIOS</td>";
+                                             "<td>COMENTARIOS</td>".
+                                             "<td>ACCIONES</td>";
                                     echo "</tr>";//tr head
                                 echo "</thead>"; //cabecera
                 
@@ -74,22 +75,22 @@
 
                                                      
                                             echo "<tr>";//tr dinamico
-                                                echo "<td>".$numeroCliente[$i]."</td>".
-                                                     "<td>".$nombrecliente[$i]."</td>".
-                                                     "<td>".$password[$i]."</td>".
-                                                     "<td>".$ambiente_descripcion[$i]."</td>".
-                                                     "<td>".$cobertura_descripcion[$i]."</td>".
-                                                     "<td>".$tipo_persona_descripcion[$i]."</td>".
-                                                     "<td>".$equipo_descripcion[$i]."</td>".
+                                                echo "<td><INPUT TYPE='Text' VALUE='".$numeroCliente[$i]."' id='numeroCliente".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$nombrecliente[$i]."' id='nombrecliente".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$password[$i]."' id='password".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$ambiente_descripcion[$i]."' id='ambiente_descripcion".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$cobertura_descripcion[$i]."' id='cobertura_descripcion".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$tipo_persona_descripcion[$i]."' id='tipo_persona_descripcion".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$equipo_descripcion[$i]."' id='equipo_descripcion".$i."' readonly></td>".
 
-                                                     "<td>".$token_type_descripcion[$i]."</td>".
-                                                     "<td>".$numero_serie[$i]."</td>".
-                                                     "<td>".$celular_certificado[$i]."</td>".
-                                                     "<td>".$existe_token[$i]."</td>".
-                                                     "<td>".$base_mejor_telefono[$i]."</td>".
-                                                     "<td>".$an[$i]."</td>".
-                                                     "<td>".$caracteristicas[$i]."</td>".
-                                                     "<td>".$comentarios[$i]."</td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$token_type_descripcion[$i]."' id='token_type_descripcion".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$numero_serie[$i]."' id='numero_serie".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$celular_certificado[$i]."' id='celular_certificado".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$existe_token[$i]."' id='existe_token".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$base_mejor_telefono[$i]."' id='base_mejor_telefono".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$an[$i]."' id='an".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$caracteristicas[$i]."' id='caracteristicas".$i."' readonly></td>".
+                                                     "<td><INPUT TYPE='Text' VALUE='".$comentarios[$i]."' id='comentarios".$i."' readonly></td>".
                                                      "<td><button onclick=\"eliminarCliente(".$i.")\" id=\"btnEliminar".$i."\" style=\"visibility:hidden\">Eliminar</button></td>";
                                             echo "</tr>"; //tr dinamico                                                                                   
                                         }

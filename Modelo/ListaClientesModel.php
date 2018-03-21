@@ -9,14 +9,14 @@ class modelo_ListaClientes{
             $this->$existeError = "";
             $this->$mensajeError = "";
         }
-    
+    //registrosInsumos
     public function get_ClientsList()
     {         
         try{  
             $conIns = new conection();
             $conn = $conIns -> sqlConection();     
            
-            $rol = 2;  
+            $rol = 1;  
             $equipo = 1;                    
             $params = array(array($rol,SQLSRV_PARAM_IN), array($equipo, SQLSRV_PARAM_IN));      
 
