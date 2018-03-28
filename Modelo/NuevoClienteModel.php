@@ -20,25 +20,23 @@ class modelo_NuevoCliente{
         }
 
 
-    public function getCombosNuevo($origen){
+    public function getCombosNuevo($origen, $accion){
         try{
             $conIns = new conection();   
             $listaComboEquipo = array();
             $conn = $conIns -> sqlConection();
-
-            $paco = "LISTA";
-            $paco1 = "TOKEN_TYPE";
-            $params = array(array($paco,SQLSRV_PARAM_IN), array($rol3, SQLSRV_PARAM_IN),array($paco1,SQLSRV_PARAM_IN), array($equipo3, SQLSRV_PARAM_IN));   
+        
+            $params = array(array($origen,SQLSRV_PARAM_IN), array(1, SQLSRV_PARAM_IN),array($accion,SQLSRV_PARAM_IN), array(1, SQLSRV_PARAM_IN));   
             $tsql_callSP = "{call dbo.SEL_ComboBOX(?,?,?,?)}";
             $stmr = sqlsrv_query($conn,$tsql_callSP,$params); 
          
-            while($reg = sqlsrv_fetch_array($stmr))
+           
+                while($reg = sqlsrv_fetch_array($stmr))
                 {          
                     $listaComboToken[] = $reg;
                 }
                 return $listaComboToken;
-                   
-
+            
         }catch(Exception $ex){
             return "Se ha producido un error indefinido, favor de contactar con el administrador";
         }
