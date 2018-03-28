@@ -1,21 +1,26 @@
 <?php
 require_once("../Conection/conectionBD.php");
 
-class modelo_ListaClientes{    
-    private $listaClientes;
+class modelo_NuevoCliente{    
     private $listaComboEquipo;
-    private $listaComboToken;
+    private $listaComboAmbiente;
+    private $listaComboCobertura;
+    private $listaComboRol;
+    private $listaComboTipoPersona;
+    private $listaComboTokenType;
+
     public function construct()
         {         
-            $this->$listaClientes = array(); 
-            $this->$listaComboEquipo = array();
-            $this->$listaComboToken = array();
-            $this->$existeError = "";
-            $this->$mensajeError = "";
+            $this->$listaComboEquipo = array(); 
+            $this->$listaComboAmbiente = array();
+            $this->$listaComboCobertura = array();
+            $this->$listaComboRol = array(); 
+            $this->$listaComboTipoPersona = array(); 
+            $this->$listaComboTokenType = array();          
         }
 
 
-    public function getComboToken($rol3, $equipo3){
+    public function getCombosNuevo($origen){
         try{
             $conIns = new conection();   
             $listaComboEquipo = array();

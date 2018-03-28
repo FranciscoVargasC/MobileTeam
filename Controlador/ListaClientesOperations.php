@@ -2,12 +2,16 @@
 require_once("../Modelo/ListaClientesOperations.php");
 $conexion = new OperacionCuentas();
 
-$operacion = $_GET['operacion'];
-$id = $_GET['ID'];
+$operacion = $_POST['operacion'];
+$accion = $_POST['accion'];
+$set = $_POST['set'];
+$id = $_POST['id'];
+
 if($operacion == "ELIMINAR_REGISTRO"){
     $result = $conexion -> eliminarRegistroTBL($operacion,$id);
-    echo "<script type='text/javascript'>";      
-    echo "window.location = '../Controlador/ListaClientesGetList.php?res=".$result."'";    
-    echo "</script>";    
+    echo $result;     
+}else if($operacion == "EDITAR_REGISTRO"){
+    $resultadoEdit = $conexion -> editarRegistro($operacion, $id, $accion, $set);
+    echo $resultadoEdit;
 }
 ?>

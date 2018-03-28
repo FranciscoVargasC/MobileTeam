@@ -1,5 +1,9 @@
-<?php    
+<?php  
+
+
          try{
+
+           
             if(is_array($datos))
                 {
                     $numeroCliente = array();
@@ -22,6 +26,7 @@
                     $an = array();
                     $caracteristicas = array();
                     $comentarios = array();
+                    $quip = array();
 
                     
                     
@@ -41,11 +46,10 @@
                                              "<td>NÚMERO DE SERIE</td>".
                                              "<td>CELULAR CERTIFICADO</td>".
                                              "<td>EXISTE TOKEN</td>".
-                                             "<td>BADE MEJOR TELÉFONO</td>".
+                                             "<td>BASE MEJOR TELÉFONO</td>".
                                              "<td>A & N</td>".
                                              "<td>CARACTERISTICAS</td>".
-                                             "<td>COMENTARIOS</td>".
-                                             "<td>ACCIONES</td>";
+                                             "<td>COMENTARIOS</td>";
                                     echo "</tr>";//tr head
                                 echo "</thead>"; //cabecera
                 
@@ -72,27 +76,50 @@
                                             $an[] = $datos[$i]["AN"];
                                             $caracteristicas[] = $datos[$i]["Caracteristicas"];
                                             $comentarios[] = $datos[$i]["Comentarios"];
-
-                                                     
+                                            $quip[] = $equipo[$i]["Nombre_Equipo"]; 
+                                            
                                             echo "<tr>";//tr dinamico
-                                                echo "<td><INPUT TYPE='Text' VALUE='".$numeroCliente[$i]."' id='numeroCliente".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$nombrecliente[$i]."' id='nombrecliente".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$password[$i]."' id='password".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$ambiente_descripcion[$i]."' id='ambiente_descripcion".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$cobertura_descripcion[$i]."' id='cobertura_descripcion".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$tipo_persona_descripcion[$i]."' id='tipo_persona_descripcion".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$equipo_descripcion[$i]."' id='equipo_descripcion".$i."' readonly></td>".
-
-                                                     "<td><INPUT TYPE='Text' VALUE='".$token_type_descripcion[$i]."' id='token_type_descripcion".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$numero_serie[$i]."' id='numero_serie".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$celular_certificado[$i]."' id='celular_certificado".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$existe_token[$i]."' id='existe_token".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$base_mejor_telefono[$i]."' id='base_mejor_telefono".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$an[$i]."' id='an".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$caracteristicas[$i]."' id='caracteristicas".$i."' readonly></td>".
-                                                     "<td><INPUT TYPE='Text' VALUE='".$comentarios[$i]."' id='comentarios".$i."' readonly></td>".
-                                                     "<td><button onclick=\"eliminarCliente(".$i.")\" id=\"btnEliminar".$i."\" style=\"visibility:hidden\">Eliminar</button></td>";
-                                            echo "</tr>"; //tr dinamico                                                                                   
+                                                echo "<td>".$numeroCliente[$i]."</td>";
+                                                echo "<td>".$nombrecliente[$i]."</td>";
+                                                echo "<td><input type='text' value='".$password[$i]."' id='password".$i."' onkeydown=\"search(this, ".$i.",'Password')\" ondblclick=\"editarCliente(".$i.", this)\" readonly></td>";
+                                                echo "<td>".$ambiente_descripcion[$i]."</td>";
+                                                echo "<td>".$cobertura_descripcion[$i]."</td>";
+                                                echo "<td>".$tipo_persona_descripcion[$i]."</td>";
+                                                $cont = count($listaComboEquipo);
+                                                echo "<td>";
+                                                echo "<INPUT TYPE='Text' VALUE='".$equipo_descripcion[$i]."' id='equipo_descripcion".$i."'disabled>";
+                                                echo "<select id='ID_Equipo".$i."' name='ID_Equipo' onchange='onChange(this,".$i.")'>";
+                                                    echo "<option value='0'> SELECCIONA OPCIÓN </option>";
+                                                 while ($cont > 0) {
+                                                    $cont--;
+                                                    echo '<option value="'.$listaComboEquipo[$cont]["ID_Equipo"].'">'.$listaComboEquipo[$cont]["Nombre_Equipo"].'</option>';
+                                                }
+                                                echo "</select>";
+                                                echo "</td>";
+                                                $cont1 = count($listaComboToken);
+                       
+                                                echo "<td>";
+                                                echo "<INPUT TYPE='Text' VALUE='".$token_type_descripcion[$i]."' id='token_type_descripcion".$i."' disabled>";
+                                                echo "<select id='ID_Token_Type".$i."' name='ID_Token_Type' onchange='onChange(this,".$i.")'>";
+                                                    echo "<option value='0'> SELECCIONA OPCIÓN </option>";
+                                                while ($cont1 > 0) {
+                                                    $cont1--;
+                                                    echo '<option value="'.$listaComboToken[$cont1]["ID_Token_Type"].'">'.$listaComboToken[$cont1]["Descripcion"].'</option>';
+                                                }
+                                                echo "</select>";
+                                                echo "</td>";
+                                    
+                                                
+                                                     
+                                                echo "<td>".$numero_serie[$i]."</td>";
+                                                echo "<td><INPUT TYPE='Text' VALUE='".$celular_certificado[$i]."' id='celular_certificado".$i."' onkeydown=\"search(this,".$i.", 'CelularCertificado')\" ondblclick=\"editarCliente(".$i.",  this, 'CelularCertificado')\" readonly></td>";
+                                                echo "<td><INPUT TYPE='Text' VALUE='".$existe_token[$i]."' id='existe_token".$i."' onkeydown=\"search(this,".$i.", 'existeToken')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";
+                                                echo "<td><INPUT TYPE='Text' VALUE='".$base_mejor_telefono[$i]."' id='base_mejor_telefono".$i."' onkeydown=\"search(this,".$i.", 'baseMejorTelefono')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";
+                                                echo "<td><INPUT TYPE='Text' VALUE='".$an[$i]."' id='an".$i."' onkeydown=\"search(this,".$i.", 'AN')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";
+                                                echo "<td><INPUT TYPE='Text' VALUE='".$caracteristicas[$i]."' id='caracteristicas".$i."' onkeydown=\"search(this,".$i.", 'Caracteristicas')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";
+                                                echo "<td><INPUT TYPE='Text' VALUE='".$comentarios[$i]."' id='comentarios".$i."' onkeydown=\"search(this,".$i.", 'Comentarios')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";                                                    
+                                                echo "<td><button onclick=\"eliminarCliente(".$i.")\" id=\"btnEliminar".$i."\" style=\"visibility:hidden\">Eliminar</button></td>";
+                                                echo "</tr>"; //tr dinamico                                                                                   
                                         }
                                 echo "</tbody>";//cuerpo                                  
                             echo "</table>";//tabla       
@@ -108,5 +135,5 @@
             {                
                    echo "<script>"."alert('Ha ocurrido un problema con el portal, favor de contactar al administrador.\n
                    Error Message: ".$ex."');"."</script>";
-            }                   
+            }           
   ?>

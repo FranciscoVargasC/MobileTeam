@@ -9,8 +9,10 @@ class conection{
              
             if($conn){
                 return $conn;
+                sqlsrv_close( $conn );
             }else
                 return null;
+                sqlsrv_close( $conn );
         }catch(Exception $ex){
             return "Se ha producido un error generico, favor de contactar con el administrador";
         }       
