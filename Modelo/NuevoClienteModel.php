@@ -19,13 +19,12 @@ class modelo_NuevoCliente{
             $this->$listaComboTokenType = array();          
         }
 
-
+//rellena ComboBox
     public function getCombosNuevo($origen, $accion){
         try{
             $conIns = new conection();   
             $listaComboEquipo = array();
             $conn = $conIns -> sqlConection();
-        
             $params = array(array($origen,SQLSRV_PARAM_IN), array(1, SQLSRV_PARAM_IN),array($accion,SQLSRV_PARAM_IN), array(1, SQLSRV_PARAM_IN));   
             $tsql_callSP = "{call dbo.SEL_ComboBOX(?,?,?,?)}";
             $stmr = sqlsrv_query($conn,$tsql_callSP,$params); 

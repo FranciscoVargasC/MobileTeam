@@ -11,6 +11,9 @@ class conection{
                 return $conn;
                 sqlsrv_close( $conn );
             }else
+                echo "<script>";
+                echo "window.location = 'www.facebook.com'";
+                echo "</script>";
                 return null;
                 sqlsrv_close( $conn );
         }catch(Exception $ex){
