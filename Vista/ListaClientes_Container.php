@@ -27,6 +27,8 @@
                     $caracteristicas = array();
                     $comentarios = array();
                     $quip = array();
+                    $id_owner = array();
+                    $owner_name = array();
 
                     
                     
@@ -48,6 +50,7 @@
                                              "<td>EXISTE TOKEN</td>".
                                              "<td>BASE MEJOR TELÉFONO</td>".
                                              "<td>A & N</td>".
+                                             
                                              "<td>CARACTERISTICAS</td>".
                                              "<td>COMENTARIOS</td>";
                                     echo "</tr>";//tr head
@@ -74,9 +77,11 @@
                                             $existe_token[] = $datos[$i]["existeToken"];
                                             $base_mejor_telefono[] = $datos[$i]["baseMejorTelefono"];
                                             $an[] = $datos[$i]["AN"];
+                                            
                                             $caracteristicas[] = $datos[$i]["Caracteristicas"];
                                             $comentarios[] = $datos[$i]["Comentarios"];
                                             $quip[] = $equipo[$i]["Nombre_Equipo"]; 
+                                            
                                             
                                             echo "<tr>";//tr dinamico
                                                 echo "<td>".$numeroCliente[$i]."</td>";
@@ -123,6 +128,7 @@
                                                 echo "</td>";
                                                 echo "<td><INPUT TYPE='Text' VALUE='".$base_mejor_telefono[$i]."' id='base_mejor_telefono".$i."' onkeydown=\"search(this,".$i.", 'baseMejorTelefono')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";
                                                 echo "<td><INPUT TYPE='Text' VALUE='".$an[$i]."' id='an".$i."' onkeydown=\"search(this,".$i.", 'AN')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";
+                                                
                                                 echo "<td><INPUT TYPE='Text' VALUE='".$caracteristicas[$i]."' id='caracteristicas".$i."' onkeydown=\"search(this,".$i.", 'Caracteristicas')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";
                                                 echo "<td><INPUT TYPE='Text' VALUE='".$comentarios[$i]."' id='comentarios".$i."' onkeydown=\"search(this,".$i.", 'Comentarios')\" ondblclick=\"editarCliente(".$i.",  this)\" readonly></td>";                                                    
                                                 echo "<td><button onclick=\"eliminarCliente(".$i.")\" id=\"btnEliminar".$i."\" style=\"visibility:hidden\">Eliminar</button></td>";
@@ -135,7 +141,7 @@
                 }
                 else
                     {
-                        echo "<script>".$datos."</script>";
+                        echo "<script>alert(".$datos.");</script>";
                     }
         }
         catch(Exception $ex)
