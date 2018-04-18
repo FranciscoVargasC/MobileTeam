@@ -93,4 +93,21 @@
                 });; 
         }                      
     }//eliminarCliente
+
+    
+</script>
+
+
+<script type="text/javascript">//funcion para buscar en tiempo real con numero de cliente
+ $(document).ready(function () {
+            (function ($) {
+                $('#filtrar').keyup(function () {
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.buscar tr').hide();
+                    $('.buscar tr').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+                })
+            }(jQuery));
+        });
 </script>
