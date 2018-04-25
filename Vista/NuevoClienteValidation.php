@@ -29,7 +29,34 @@
                                 if(val_equipo(equipo)){
                                     if(val_token(token)){
                                         if(val_existe(existeToken)){
-
+                                            let parametro={"numCliente": numCliente,
+                                                           "nomCliente": nomCliente, 
+                                                           "pass": pass.charAt(0).toUpperCase() + pass.slice(1),
+                                                           "ambiente": ambiente,
+                                                           "cobertura" : cobertura,
+                                                           "t_persona" : t_persona,   
+                                                           "equipo" : equipo,
+                                                           "token" : token,
+                                                           "serie" : serie,
+                                                           "cCertificado" : cCertificado, 
+                                                           "existeToken" : existeToken,  
+                                                           "bTelefono" : bTelefono,
+                                                           "an" : an,
+                                                           "caracteristicas" : caracteristicas,  
+                                                           "comentarios" : comentarios                                                    
+                                                           };
+                                           
+                                            $.ajax({data:  parametro,
+                                            url: '../Controlador/NuevoClienteInsert.php',
+                                            type: 'post', 
+                                            }).done(function(msg){
+                                            if(Object.keys(msg).length != 0){
+                                                alert(msg);
+                                                location.reload();
+                                            }            
+                                                alert(msg);            
+                                                location.reload();
+                                            });; 
                                         }
                                     }
                                 }
