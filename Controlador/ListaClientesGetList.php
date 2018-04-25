@@ -1,19 +1,24 @@
 <?php
-$paco = $_POST["username"];
-try{
 
+
+
+session_start();
+
+$rol = $_SESSION['ID_Rol'];
+$equipo = $_SESSION['ID_Equipo'];
+
+/*echo $rol;
+echo "    " + $equipo;*/
 
     require_once("../Modelo/ListaClientesModel.php");
     $conexion = new modelo_ListaClientes();
-
-    $datos = $conexion -> get_ClientsList(2,2); 
-    $listaComboEquipo = $conexion -> getComboEquipo(2,2);
-    $listaComboToken = $conexion -> getComboToken(2,2);
+    $datos = $conexion -> get_ClientsList($rol,$equipo); 
+    $listaComboEquipo = $conexion -> getComboEquipo($rol,$equipo);
+    $listaComboToken = $conexion -> getComboToken($rol,$equipo);
     require_once("../Vista/ListaclientesView.php");
 
-   
-}catch(Exception $ex){
-    
-                  
-}
 ?>
+
+
+
+
