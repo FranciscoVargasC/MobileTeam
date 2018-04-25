@@ -1,6 +1,7 @@
 <?php
 
 
+
 session_start();
 
 $rol = $_SESSION['ID_Rol'];
@@ -16,9 +17,8 @@ echo "    " + $equipo;*/
     $listaComboToken = $conexion -> getComboToken($rol,$equipo);
     require_once("../Vista/ListaclientesView.php");
 
-
-
-
-
-
 ?>
+
+
+
+
