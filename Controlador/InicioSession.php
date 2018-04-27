@@ -54,7 +54,7 @@ try{
                     
 
             }
-            require_once("../Controlador/ListaClientesGetList.php");
+            echo "<script>window.location='../Controlador/ListaClientesGetList.php';</script>";
    }else{
     echo "<script>";
     echo "alert(" .$datos.")";

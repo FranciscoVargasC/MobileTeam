@@ -22,6 +22,6 @@ if($logout)
     
 }else{
 
-    echo $logout;
+    echo '<script>alert ('.$logout.');</script>';
 }
   
