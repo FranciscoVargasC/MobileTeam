@@ -71,9 +71,29 @@
                     ?>
                     <br>
                     <div style='visibility:hidden' id='addNew'>
-                    <div>Username: <INPUT TYPE='Text' id='categoria'> </div>
+                    <div>* Username: <INPUT TYPE='Text' id='username'> </div>
+                    <div>* Password: <INPUT TYPE='Text' id='password'> </div>
+                    <div>* Nombre: <INPUT TYPE='Text' id='nombre'> </div>
+                    <div>* Apellido Paterno: <INPUT TYPE='Text' id='aP'> </div>
+                    <div>* Apellido Materno: <INPUT TYPE='Text' id='aM'> </div>
+                    <div>* Rol: 
+                        <?php
+                            $contRol3 = count($listaComboRol);
+                            echo "<td>";                            
+                            echo "<select id='ID_Rol".$i."' name='ID_Rol' onchange=''>";
+                            echo "<option value='0'> SELECCIONA OPCIÓN </option>";                                                    
+                                while ($contRol3 > 0) {
+                                    $contRol3--;                                                                                                      
+                                    echo '<option value="'.$listaComboRol[$contRol3]["ID_Rol"].'">'.$listaComboRol[$contRol3]["Categoria"].'</option>';
+                                }
+                                    echo "</select>";
+                                echo "</td>";
+                        ?>
+                    </div>
+                    
+                    
                     <br>
-                    <button onclick='add();'>Cancelar</button>
+                    <button onclick='add("hidden");'>Cancelar</button>
                     </div>
                <?php
         }

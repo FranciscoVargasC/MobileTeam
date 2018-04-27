@@ -2,13 +2,19 @@
 <?php
 
 session_start();
+if(!isset($_POST["nombUsuario"]))
+{
+    ?>    
+   <script>
+   alert('No puedes acceder sin una sesión activa.');
+    window.location='../Controlador/IndexController.php';
+  </script>
+<?php
 
+}else{
 require_once("../Modelo/InicioSesion.php");
 $conexion = new modelo_login();
 $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
-echo $datos;
-
-
 
 
 try{
@@ -46,7 +52,8 @@ try{
                     
 
             }
-            require_once("../Controlador/ListaClientesGetList.php");
+            //require_once("../Controlador/ListaClientesGetList.php");
+            echo "<script>window.location='../Controlador/ListaClientesGetList.php';</script>";
    }else{
     echo "<script>";
     echo "alert(" .$datos.")";
@@ -63,7 +70,7 @@ catch(Exception $ex)
    }                    
 
 
-
+}
 ?>
 
 
