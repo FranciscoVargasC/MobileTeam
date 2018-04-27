@@ -35,6 +35,8 @@
                     echo "<div>";
                         echo "<div>";
                             echo "<table id='tblClientes' onload=\"evalRol()\" >";//tabla
+                             echo " <div class='input-insumos'> <span class='input-insumos-addon'>Buscar</span>";
+                               echo " <input id='filtrar' type='text' class='form-control' placeholder='Ingresa la búsqueda...'>";
                                 echo "<thead>";//cabecera
                                     echo "<tr style='background:#5FABC0;'>";//tr head
                                         echo "<td>NÚMERO DEL CLIENTE</td>".
@@ -56,7 +58,7 @@
                                     echo "</tr>";//tr head
                                 echo "</thead>"; //cabecera
                 
-                                echo "<tbody>";//cuerpo
+                                echo "<tbody class='buscar'>";//cuerpo
                                     for($i = 0;$i<count($datos);$i++)
                                         {   
                                             $numeroCliente[] = $datos[$i]["Numero_Cliente"];
