@@ -2,7 +2,15 @@
 <?php
 
 session_start();
-
+if(!isset($_POST["nombUsuario"]))
+{
+    ?>    
+   <script>
+   alert('No puedes acceder sin una sesión activa.');
+    window.location='../Controlador/IndexController.php';
+  </script>
+    <?php
+}else{
 require_once("../Modelo/InicioSesion.php");
 $conexion = new modelo_login();
 $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
@@ -63,7 +71,7 @@ catch(Exception $ex)
    }                    
 
 
-
+}
 ?>
 
 

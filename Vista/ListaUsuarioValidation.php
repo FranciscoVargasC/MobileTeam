@@ -38,8 +38,16 @@ function eliminarCliente($i) {
         }                      
     }//eliminarCliente
 
-    function add(){
-        document.getElementById("addNew").style.visibility = "visible";
+    function add(origen){
+        switch(origen){
+            case "visible":
+                document.getElementById("addNew").style.visibility = "visible";
+            break;
+            case "hidden":
+                document.getElementById("addNew").style.visibility = "hidden";
+
+            break;
+        }
     }
 
 </script>

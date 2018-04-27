@@ -10,9 +10,13 @@
            //var concatField =  nombreField[i].concat(i);         
            if(rol == 1 || rol == 3){                   
                 document.getElementById(concatenado).style.visibility = "visible";
+                document.getElementById("user").style.visibility = "visible";
+                document.getElementById("cat").style.visibility = "visible";
                 //document.getElementById(concatField).readOnly  = false;
            }else{
                 document.getElementById(concatenado).style.visibility = "hidden";
+                document.getElementById("user").style.visibility = "hidden";
+                document.getElementById("cat").style.visibility = "hidden";
                 //document.getElementById(concatField).readOnly  = false;
            }
         }

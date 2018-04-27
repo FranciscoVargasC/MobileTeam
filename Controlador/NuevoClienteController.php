@@ -1,4 +1,21 @@
 <?php
+
+
+session_start();
+
+$rol = $_SESSION['ID_Rol'];
+$equipo = $_SESSION['ID_Equipo'];
+
+if(!isset($rol))
+{
+    ?>    
+   <script>
+   alert('No puedes acceder sin una sesión activa.');
+    window.location='../Controlador/IndexController.php';
+  </script>
+    <?php
+}else{
+
 require_once("../Modelo/NuevoClienteModel.php");
 $conexion = new modelo_NuevoCliente();
 $contenido = array("AMBIENTE", "COBERTURA", "TIPO_PERSONA", "EQUIPO", "TOKEN_TYPE");
@@ -40,4 +57,5 @@ for($a = 0; $a < count($contenido);$a++){
     }
 }
 require_once("../Vista/NuevoCLienteView.php");
+}
 ?>
