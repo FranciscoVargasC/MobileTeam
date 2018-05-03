@@ -17,5 +17,10 @@ if($bandera == "ELIMINAR"){
    
     $resultadoEdit = $conexion -> editarRegistro($bandera, $username, $accion, $valor);
     echo $resultadoEdit;
+}else if($bandera == "INSERTAR"){
+    $materno = ($_POST["apellidoM"] == "" || $_POST["apellidoM"] == null) ?  "" : $_POST["apellidoM"];
+
+    $resultadoInsert = $conexion -> insertarRegistro($_POST["username"], $_POST["password"], $_POST["nombre"], $_POST["apellidoP"],$materno, $_POST["rol"], $_POST["equipo"], $_POST["lider"]);
+    echo $resultadoInsert;
 }
 ?>

@@ -14,7 +14,7 @@ if(!isset($_POST["nombUsuario"]))
 require_once("../Modelo/InicioSesion.php");
 $conexion = new modelo_login();
 $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
-echo $datos;
+//echo $datos;
 
 
 
