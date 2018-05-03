@@ -1,3 +1,17 @@
+<?php
+
+if(!isset($rol))
+{
+    ?>
+    <script>
+    window.location='../Vista/Error.php';
+   </script>
+   <?php
+}
+?>
+
+
+
 <a href="../Controlador/ListaClientesGetList.php" >Regresar</a> 
 </br>
 <?php

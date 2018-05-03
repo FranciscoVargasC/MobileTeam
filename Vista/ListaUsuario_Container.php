@@ -1,3 +1,16 @@
+<?php
+
+if(!isset($rol))
+{
+    ?>
+    <script>
+    window.location='../Vista/Error.php';
+   </script>
+   <?php
+}
+?>
+
+
 <?php  
 
 

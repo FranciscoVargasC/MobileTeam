@@ -1,4 +1,14 @@
 <?php
+
+if(!isset($datos))
+{
+    ?>    
+   <script>
+    window.location='../Vista/Error.php';
+  </script>
+    <?php
+}else{
+
 require_once("../Controlador/CatalogosController.php");
 
 
@@ -60,4 +70,5 @@ if(is_array($datos))
 
         echo "</div>";
 echo "</div>";
+    }
 ?>

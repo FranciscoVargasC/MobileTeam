@@ -11,10 +11,23 @@ if(!isset($_POST["nombUsuario"]))
   </script>
 <?php
 
+
+
+
 }else{
+
+
+
 require_once("../Modelo/InicioSesion.php");
 $conexion = new modelo_login();
 $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
+
+//alert.
+
+echo '<script>alert ("'.$datos.'");</script>';
+require_once("../Controlador/IndexController.php");
+
+
 
 
 try{
@@ -52,7 +65,6 @@ try{
                     
 
             }
-            //require_once("../Controlador/ListaClientesGetList.php");
             echo "<script>window.location='../Controlador/ListaClientesGetList.php';</script>";
    }else{
     echo "<script>";

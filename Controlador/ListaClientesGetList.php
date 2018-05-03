@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -26,7 +27,13 @@ if(!isset($rol))
     $listaComboToken = $conexion -> getComboToken($rol,$equipo);
     require_once("../Vista/ListaclientesView.php");
 }
+
+
 ?>
+
+
+
+
 
 
 

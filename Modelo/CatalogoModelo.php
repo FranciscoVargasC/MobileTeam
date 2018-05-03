@@ -1,4 +1,18 @@
 <?php
+
+if(!isset($rol))
+{
+    ?>
+    <script>
+    window.location='../Vista/Error.php';
+   </script>
+   <?php
+}
+?>
+
+
+
+<?php
 require_once("../Conection/conectionBD.php");
 
 class modelo_Catalogos{    
