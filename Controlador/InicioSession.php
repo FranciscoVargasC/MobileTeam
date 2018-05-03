@@ -21,11 +21,15 @@ if(!isset($_POST["nombUsuario"]))
 require_once("../Modelo/InicioSesion.php");
 $conexion = new modelo_login();
 $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
+<<<<<<< HEAD
 
 //alert.
 
 echo '<script>alert ("'.$datos.'");</script>';
 require_once("../Controlador/IndexController.php");
+=======
+//echo $datos;
+>>>>>>> 0edd1a96d4debf481713ca60db8df54d5e4f77d1
 
 
 

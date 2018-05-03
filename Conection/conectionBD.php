@@ -2,8 +2,14 @@
 class conection{    
     public function sqlConection(){
         try{
+<<<<<<< HEAD
             $serverName = '10.189.51.186';
             $connectionInfo = array("Database"=>"QAClientes", "UID"=>"Josue", "PWD"=>"@dmin2018","CharacterSet"=>"UTF-8");
+=======
+            $serverName = '10.189.11.126';
+            $connectionInfo = array("Database"=>"QAClientes", "UID"=>"Francisco", "PWD"=>"@dmin2018","CharacterSet"=>"UTF-8");
+   
+>>>>>>> 0edd1a96d4debf481713ca60db8df54d5e4f77d1
             $conn = sqlsrv_connect($serverName, $connectionInfo);   
              
             if($conn){

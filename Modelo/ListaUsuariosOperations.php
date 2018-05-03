@@ -59,6 +59,43 @@ class OperacionUser{
         }catch(Exception $ex){
             return "Se ha producido un error indefinido, favor de contactar con el administrador";
         } 
+    }//
+
+
+    public function insertarRegistro($username,$password, $nombre, $apellidoP, $apellidoM, $rol, $equipo, $lider){
+        try{
+            
+            $conIns = new conection();
+            $conn = $conIns -> sqlConection();  
+           
+  
+            $params = array(array($username,SQLSRV_PARAM_IN), 
+                            array($password, SQLSRV_PARAM_IN),
+                            array($nombre, SQLSRV_PARAM_IN),
+                            array($apellidoP, SQLSRV_PARAM_IN), 
+                            array($apellidoM, SQLSRV_PARAM_IN), 
+                            array($rol, SQLSRV_PARAM_IN),
+                            array($equipo, SQLSRV_PARAM_IN),
+                            array($lider, SQLSRV_PARAM_IN));      
+
+            $tsql_callSP = "{call dbo.INS_NuevoUsuario(?,?,?,?,?,?,?,?)}";
+        
+            $stmr = sqlsrv_query($conn,$tsql_callSP,$params); 
+
+
+
+            while($reg = sqlsrv_fetch_array($stmr))
+            {   
+                $this->response[] = $reg;
+            }
+
+          return $this->response[0]["MensajeError"];
+            
+     
+        
+        }catch(Exception $ex){
+            return "Se ha producido un error indefinido, favor de contactar con el administrador";
+        } 
     }
     
 }//OperacionCuentas

@@ -84,16 +84,16 @@ if(!isset($rol))
                     ?>
                     <br>
                     <div style='visibility:hidden' id='addNew'>
-                    <div>* Username: <INPUT TYPE='Text' id='username'> </div>
-                    <div>* Password: <INPUT TYPE='Text' id='password'> </div>
-                    <div>* Nombre: <INPUT TYPE='Text' id='nombre'> </div>
-                    <div>* Apellido Paterno: <INPUT TYPE='Text' id='aP'> </div>
-                    <div>* Apellido Materno: <INPUT TYPE='Text' id='aM'> </div>
+                    <div>* Username: <INPUT TYPE='Text' id='userNew'> </div>
+                    <div>* Password: <INPUT TYPE='Text' id='passNew'> </div>
+                    <div>* Nombre: <INPUT TYPE='Text' id='name'> </div>
+                    <div>* Apellido Paterno: <INPUT TYPE='Text' id='ap'> </div>
+                    <div>Apellido Materno: <INPUT TYPE='Text' id='am'> </div>
                     <div>* Rol: 
                         <?php
                             $contRol3 = count($listaComboRol);
                             echo "<td>";                            
-                            echo "<select id='ID_Rol".$i."' name='ID_Rol' onchange=''>";
+                            echo "<select id='ID_RolN' name='ID_RolN'>";
                             echo "<option value='0'> SELECCIONA OPCIÓN </option>";                                                    
                                 while ($contRol3 > 0) {
                                     $contRol3--;                                                                                                      
@@ -103,8 +103,36 @@ if(!isset($rol))
                                 echo "</td>";
                         ?>
                     </div>
-                    
-                    
+
+                    <div>* Equipo: 
+                        <?php
+                            $contRol4 = count($listaComboEQ);
+                            echo "<td>";                            
+                            echo "<select id='ID_EquipoN' name='ID_equipoN' >";
+                            echo "<option value='0'> SELECCIONA OPCIÓN </option>";                                                    
+                                while ($contRol4 > 0) {
+                                    $contRol4--;                                                                                                      
+                                    echo '<option value="'.$listaComboEQ[$contRol4]["ID_Equipo"].'">'.$listaComboEQ[$contRol4]["Nombre_Equipo"].'</option>';
+                                }
+                                    echo "</select>";
+                                echo "</td>";
+                        ?>
+                    </div>
+
+
+                    <div>* Será líder?: 
+                        <?php
+                         echo "<select id='lider' name='lider'>";
+                         echo "<option value='100'>SELECCIONE OPCIÓN</option>";
+                         echo "<option value='1'>SI</option>";
+                         echo "<option value='0'>NO</option>";
+                        echo "</select>";
+                        ?>
+                    </div>
+
+                   
+                   <br>
+                    <button onclick='insertarNuevoUsuario();'>Guardar cambios</button>
                     <br>
                     <button onclick='add("hidden");'>Cancelar</button>
                     </div>
