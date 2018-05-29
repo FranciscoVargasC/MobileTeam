@@ -4,7 +4,7 @@ class conection{
         try{
             $serverName = '54.183.103.215';
             $connectionInfo = array("Database"=>"QAClientes", "UID"=>"sa", "PWD"=>"Banamex1","CharacterSet"=>"UTF-8");
-   echo $conn;
+   
             $conn = sqlsrv_connect($serverName, $connectionInfo);   
 
              
