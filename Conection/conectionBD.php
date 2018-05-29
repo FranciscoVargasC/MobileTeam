@@ -7,7 +7,8 @@ class conection{
    
             $conn = sqlsrv_connect($serverName, $connectionInfo);   
 
-             
+             //hola
+            
             if($conn){
                 return $conn;
                 sqlsrv_close( $conn );
