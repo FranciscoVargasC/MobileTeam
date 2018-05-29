@@ -12,8 +12,6 @@ if(!isset($_POST["nombUsuario"]))
 <?php
 
 
-
-
 }else{
 
 
@@ -21,15 +19,6 @@ if(!isset($_POST["nombUsuario"]))
 require_once("../Modelo/InicioSesion.php");
 $conexion = new modelo_login();
 $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
-<<<<<<< HEAD
-
-//alert.
-
-echo '<script>alert ("'.$datos.'");</script>';
-require_once("../Controlador/IndexController.php");
-=======
-//echo $datos;
->>>>>>> 0edd1a96d4debf481713ca60db8df54d5e4f77d1
 
 
 
@@ -37,6 +26,11 @@ require_once("../Controlador/IndexController.php");
 try{
     if(is_array($datos))
     {
+        
+        echo "<script>";
+        echo 'alert (" Bienvenido " );';
+        echo "</script>";
+
         $UserName = array();
         $NombreCompleto = array();
         $Categoria = array();
@@ -72,8 +66,9 @@ try{
             echo "<script>window.location='../Controlador/ListaClientesGetList.php';</script>";
    }else{
     echo "<script>";
-    echo "alert(" .$datos.")";
+    echo 'alert (" '.$datos.' " );';
     echo "</script>";
+    require_once("../Controlador/IndexController.php");
    }
 
 }

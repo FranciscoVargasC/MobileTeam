@@ -1,7 +1,5 @@
 
 
-
-
 <?php
 
     session_start();
@@ -22,6 +20,7 @@
         public function post_login($UserName,$Password){
 
             $conIns = new conection();
+
             $conn = $conIns -> sqlConection();
 
             $params = array(array("LOGIN",SQLSRV_PARAM_IN), array($UserName, SQLSRV_PARAM_IN),array($Password,SQLSRV_PARAM_IN),array($TIMESTAMP,SQLSRV_PARAM_IN));
@@ -36,14 +35,18 @@
 
                 
                 $this->login[] = $reg;
+                
+                
 
             }
             
             for($a = 0; $a < count($this->login); $a++)
             {
+                
                 $verify = $this->login[$a]['ExisteError'];
                     if($verify == "0")
-                    {                        
+                    {                  
+                              
                         return $this->login;
                         break;
                     }

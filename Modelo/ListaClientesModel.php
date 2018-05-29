@@ -12,6 +12,7 @@ if(!isset($rol))
 
 
 
+
 <?php
 require_once("../Conection/conectionBD.php");
 
