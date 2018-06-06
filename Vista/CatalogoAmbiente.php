@@ -2,11 +2,7 @@
 
 if(!isset($datos))
 {
-    ?>    
-   <script>
-    window.location='../Vista/Error.php';
-  </script>
-    <?php
+   
 }else{
 
 require_once("../Controlador/CatalogosController.php");

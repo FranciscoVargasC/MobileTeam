@@ -24,8 +24,9 @@ $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
 
 //alert.
 
-echo '<script>alert ("Bienvenido");</script>';
+echo '<script>alert ('.$datos.');</script>';
 require_once("../Controlador/IndexController.php");
+
 
 
 
