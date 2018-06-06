@@ -24,6 +24,11 @@ $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
 
 //alert.
 
+
+if($datos[0]["ExisteError"] == "0"){
+
+
+
 echo '<script>alert ('.$datos.');</script>';
 require_once("../Controlador/IndexController.php");
 
@@ -82,7 +87,12 @@ catch(Exception $ex)
 
    }                    
 
-
+}
+else{
+    echo "<script>";
+    echo "alert(" .$datos[0]["MensajeError"].")";
+    echo "</script>";
+}
 }
 ?>
 
