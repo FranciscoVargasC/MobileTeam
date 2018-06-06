@@ -10,31 +10,16 @@ if(!isset($_POST["nombUsuario"]))
     window.location='../Controlador/IndexController.php';
   </script>
 <?php
-
-
-
+//kncdkcn
 
 }else{
-
-
 
 require_once("../Modelo/InicioSesion.php");
 $conexion = new modelo_login();
 $datos = $conexion -> post_login($_POST["nombUsuario"],$_POST["pass"]);
 
-//alert.
-
-
-if($datos[0]["ExisteError"] == "0"){
-
-
-
 echo '<script>alert ('.$datos.');</script>';
 require_once("../Controlador/IndexController.php");
-
-
-
-
 
 try{
     if(is_array($datos))
@@ -87,12 +72,7 @@ catch(Exception $ex)
 
    }                    
 
-}
-else{
-    echo "<script>";
-    echo "alert(" .$datos[0]["MensajeError"].")";
-    echo "</script>";
-}
+
 }
 ?>
 
