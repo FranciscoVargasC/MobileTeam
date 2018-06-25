@@ -33,7 +33,7 @@ function limpiaUsuario() {
     var tam = val.length;
     for(i = 0; i < tam; i++) {
         if(!isNaN(val[i]))
-            document.getElementById("usuario").value = '';
+         //   document.getElementById("usuario").value = '';
     }
 }
 

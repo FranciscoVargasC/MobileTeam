@@ -2,8 +2,8 @@
 class conection{    
     public function sqlConection(){
         try{
-            $serverName = '0';
-            $connectionInfo = array("Database"=>"QAClientes", "UID"=>"", "PWD"=>"","CharacterSet"=>"UTF-8");
+            $serverName = '54.183.103.215';
+            $connectionInfo = array("Database"=>"QAClientes", "UID"=>"sa", "PWD"=>"Banamex1","CharacterSet"=>"UTF-8");
    
             $conn = sqlsrv_connect($serverName, $connectionInfo);   
 
