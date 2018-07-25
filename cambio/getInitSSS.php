@@ -19,31 +19,7 @@ require_once('./nusoap/lib/nusoap.php');
             $url = "$h:$p/$c/$sID?wsdl";
             
             try {   
-                $xml_post_string = '<?xml version="1.0" encoding="utf-8"?>
-                                    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sss="http://sss.implementation.webservices.consumer.banamex.com/">
-                                    <soapenv:Header>
-                                        <sss:SSSHeader>
-                                        <!--Optional:-->
-                                            <appSession>'.$appSession.'</appSession>
-                                            <lang>1</lang>
-                                        </sss:SSSHeader>
-                                    </soapenv:Header>
-                                    <soapenv:Body>
-                                        <sss:registerByApplication>
-                                            <RegisterByAppRequest>
-                                                <clientId>'.$clientID.'</clientId>
-                                                <phoneNumber>+'.$telefono.'</phoneNumber>
-                                                <deviceId>3</deviceId>
-                                                <!--Optional:-->
-                                                <deviceAlias></deviceAlias>
-                                                <!--Optional:-->
-                                                <deviceLicense></deviceLicense>
-                                                <!--Optional:-->
-                                                <deviceStatus/>
-                                            </RegisterByAppRequest>
-                                        </sss:registerByApplication>
-                                    </soapenv:Body>
-                                    </soapenv:Envelope>';   
+                $xml_post_string = '';   
 
                 $headers = array(
                         "Content-type: text/xml;charset=\"utf-8\"",
